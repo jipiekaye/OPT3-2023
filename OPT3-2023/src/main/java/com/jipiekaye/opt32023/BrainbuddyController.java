@@ -1,9 +1,9 @@
-package com.example.opt32023;
+package com.jipiekaye.opt32023;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class BrainbuddyController {
     @FXML
     private Label welcomeText;
 
