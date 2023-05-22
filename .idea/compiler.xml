@@ -9,8 +9,5 @@
         <module name="OPT3-2023" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="OPT3-2023" target="16" />
-    </bytecodeTargetLevel>
   </component>
 </project>
