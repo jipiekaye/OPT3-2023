@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Brainbuddy extends Application {
     @Override
@@ -20,4 +21,6 @@ public class Brainbuddy extends Application {
     public static void main(String[] args) {
         launch();
     }
+
+    private static ArrayList<Gebruiker> gebruikers = new ArrayList<>();
 }
