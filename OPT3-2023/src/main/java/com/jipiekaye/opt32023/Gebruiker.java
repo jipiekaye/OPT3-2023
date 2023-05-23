@@ -1,11 +1,12 @@
 package com.jipiekaye.opt32023;
-
+import java.util.ArrayList;
 public class Gebruiker {
 
     private String naam;
     private String wachtwoord;
     private boolean wiltPopUps;
     private int aantalVoltooideTaken;
+    private ArrayList<Taak> taken = new ArrayList<>();
 
     public Gebruiker(String naam, String wachtwoord, boolean wiltPopUps) {
         this.naam = naam;
