@@ -1,4 +1,6 @@
 package com.jipiekaye.opt32023;
+import javafx.scene.paint.Color;
+
 import java.util.ArrayList;
 public class Gebruiker {
 
@@ -8,11 +10,14 @@ public class Gebruiker {
     private int aantalVoltooideTaken;
     private ArrayList<Taak> taken = new ArrayList<>();
 
+    private int experience;
+
     public Gebruiker(String naam, String wachtwoord, boolean wiltPopUps) {
         this.naam = naam;
         this.wachtwoord = wachtwoord;
         this.wiltPopUps = wiltPopUps;
         this.aantalVoltooideTaken = 0;
+        this.experience = 0;
     }
 
 
@@ -47,4 +52,15 @@ public class Gebruiker {
     public void setAantalVoltooideTaken(int aantalVoltooideTaken) {
         this.aantalVoltooideTaken = aantalVoltooideTaken;
     }
+
+    public String standVanTaken(int takenTeDoen, int aantalVoltooideTaken) {
+        float taken = ((float) aantalVoltooideTaken/(takenTeDoen + aantalVoltooideTaken))*100;
+        if (taken < 30)
+            return "rood";
+        if (taken < 70)
+            return "geel";
+        else return "groen";
+    }
+
+
 }
