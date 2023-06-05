@@ -16,13 +16,13 @@ public class Taak {
     }
 
     public static int experienceCalculator(int prioriteit, boolean teLaat, int dagenTeVroeg, boolean laatsteTaak) {
-        int result = 100 / prioriteit;
+        double result = (double) 100 / prioriteit;
         if (dagenTeVroeg > 0)
             result *= (dagenTeVroeg * 1.5);
         if (teLaat)
             result /= 2;
         if (laatsteTaak)
             result += 50;
-        return result;
+        return (int) result;
     }
 }
