@@ -1,5 +1,4 @@
 package com.jipiekaye.opt32023;
-import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 public class Gebruiker {
@@ -10,6 +9,8 @@ public class Gebruiker {
     private int aantalVoltooideTaken;
     private ArrayList<Taak> taken = new ArrayList<>();
 
+    private Klok klok;
+
     private int experience;
 
     public Gebruiker(String naam, String wachtwoord, boolean wiltPopUps) {
@@ -18,6 +19,12 @@ public class Gebruiker {
         this.wiltPopUps = wiltPopUps;
         this.aantalVoltooideTaken = 0;
         this.experience = 0;
+        setKlok();
+    }
+
+    private void setKlok() {
+        Thread thread = new Thread(this.klok = new Klok());
+        thread.start();
     }
 
 
@@ -29,7 +36,7 @@ public class Gebruiker {
         return wachtwoord;
     }
 
-    public boolean isWiltPopUps() {
+    public boolean getWiltPopUps() {
         return wiltPopUps;
     }
 

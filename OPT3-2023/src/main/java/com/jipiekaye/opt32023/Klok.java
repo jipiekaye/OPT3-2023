@@ -1,33 +1,34 @@
 package com.jipiekaye.opt32023;
 
-import com.jipiekaye.opt32023.observerPattern.Subject;
+import com.jipiekaye.opt32023.observerPattern.Observable;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class Klok extends Subject {
-    private SimpleDateFormat timeFormat;
-    private SimpleDateFormat dayFormat;
-    private SimpleDateFormat dateFormat;
+public class Klok extends Observable implements Runnable {
+    final private SimpleDateFormat timeFormat;
+    final private SimpleDateFormat dayFormat;
+    final private SimpleDateFormat dateFormat;
     private String tijd;
-    private String day;
-    private String date;
+    private String dag;
+    private String datum;
 
     public Klok() {
         timeFormat = new SimpleDateFormat("kk:mm:ss");
         dayFormat = new SimpleDateFormat("EEEE");
         dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        setDatetime();
+        run();
     }
 
-    public void setDatetime() {
+    public void run() {
         while(true) {
             tijd = timeFormat.format(Calendar.getInstance().getTime());
 
-            day = dayFormat.format(Calendar.getInstance().getTime());
+            dag = dayFormat.format(Calendar.getInstance().getTime());
 
-            date = dateFormat.format(Calendar.getInstance().getTime());
+            datum = dateFormat.format(Calendar.getInstance().getTime());
             System.out.println(toString());
+
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
@@ -40,16 +41,16 @@ public class Klok extends Subject {
         return tijd;
     }
 
-    public String getDay() {
-        return day;
+    public String getDag() {
+        return dag;
     }
 
-    public String getDate() {
-        return date;
+    public String getDatum() {
+        return datum;
     }
 
     @Override
     public String toString() {
-        return tijd + "\n" + day + "\n" + date;
+        return tijd + "\n" + dag + "\n" + datum;
     }
 }

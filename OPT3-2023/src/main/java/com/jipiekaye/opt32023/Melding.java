@@ -1,8 +1,8 @@
 package com.jipiekaye.opt32023;
 
-import com.jipiekaye.opt32023.observerPattern.Obeserver;
+import com.jipiekaye.opt32023.observerPattern.Observer;
 
-public class Melding implements Obeserver {
+public class Melding implements Observer {
     private String bericht;
     public Melding(String titel) {
         this.bericht = titel + " moet nu gedaan worden!";
