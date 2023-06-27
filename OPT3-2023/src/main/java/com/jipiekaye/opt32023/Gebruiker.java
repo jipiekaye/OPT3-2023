@@ -20,11 +20,21 @@ public class Gebruiker {
         this.aantalVoltooideTaken = 0;
         this.experience = 0;
         setKlok();
+        addTask();
     }
 
     private void setKlok() {
         Thread thread = new Thread(this.klok = new Klok());
         thread.start();
+    }
+
+    private void addTask() {
+        taken.add(new Taak("medicatie nemen", this.klok, klok.getDatum(), klok.getTijd().substring(0,6)+"10", 1));
+        taken.add(new Taak("medicatie nemen", this.klok, klok.getDatum(), klok.getTijd().substring(0,6)+"20", 1));
+        taken.add(new Taak("medicatie nemen", this.klok, klok.getDatum(), klok.getTijd().substring(0,6)+"30", 1));
+        taken.add(new Taak("medicatie nemen", this.klok, klok.getDatum(), klok.getTijd().substring(0,6)+"40", 1));
+        taken.add(new Taak("medicatie nemen", this.klok, klok.getDatum(), klok.getTijd().substring(0,6)+"50", 1));
+        taken.add(new Taak("medicatie nemen", this.klok, klok.getDatum(), klok.getTijd().substring(0,6)+"60", 1));
     }
 
 

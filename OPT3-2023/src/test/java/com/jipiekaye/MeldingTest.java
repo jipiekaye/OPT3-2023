@@ -1,5 +1,6 @@
 package com.jipiekaye;
 
+import com.jipiekaye.opt32023.Klok;
 import com.jipiekaye.opt32023.Melding;
 import org.junit.jupiter.api.Test;
 

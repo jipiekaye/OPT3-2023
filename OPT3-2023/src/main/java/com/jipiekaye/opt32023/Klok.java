@@ -17,7 +17,6 @@ public class Klok extends Observable implements Runnable {
         timeFormat = new SimpleDateFormat("kk:mm:ss");
         dayFormat = new SimpleDateFormat("EEEE");
         dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        run();
     }
 
     public void run() {
@@ -28,6 +27,8 @@ public class Klok extends Observable implements Runnable {
 
             datum = dateFormat.format(Calendar.getInstance().getTime());
             System.out.println(toString());
+            //om de observers te laten weten dat de tijd is veranderd
+            notifyObservers();
 
             try {
                 Thread.sleep(1000);
