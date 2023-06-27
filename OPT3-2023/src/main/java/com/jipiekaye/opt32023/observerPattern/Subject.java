@@ -1,4 +1,6 @@
-package com.jipiekaye.opt32023;
+package com.jipiekaye.opt32023.observerPattern;
+
+import com.jipiekaye.opt32023.observerPattern.Obeserver;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -6,4 +6,6 @@ module com.example.opt32023 {
 
     opens com.jipiekaye.opt32023 to javafx.fxml;
     exports com.jipiekaye.opt32023;
+    exports com.jipiekaye.opt32023.observerPattern;
+    opens com.jipiekaye.opt32023.observerPattern to javafx.fxml;
 }

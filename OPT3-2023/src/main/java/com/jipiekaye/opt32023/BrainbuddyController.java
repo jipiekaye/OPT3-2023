@@ -5,10 +5,11 @@ import javafx.scene.control.Label;
 
 public class BrainbuddyController {
     @FXML
-    private Label welcomeText;
+    private Label klok;
+
 
     @FXML
     protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+        klok.setText(klok.toString());
     }
 }
