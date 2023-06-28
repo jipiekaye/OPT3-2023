@@ -1,5 +1,8 @@
 package com.jipiekaye.opt32023;
 
+import com.jipiekaye.opt32023.TemplateMethodPattern.ConstanteTaak;
+import com.jipiekaye.opt32023.TemplateMethodPattern.EnkeleTaak;
+
 import java.util.ArrayList;
 public class Gebruiker {
 
@@ -29,12 +32,14 @@ public class Gebruiker {
     }
 
     private void addTask() {
-        taken.add(new Taak("medicatie nemen", this.klok, klok.getDatum(), klok.getTijd().substring(0,6)+"10", 1));
-        taken.add(new Taak("medicatie nemen", this.klok, klok.getDatum(), klok.getTijd().substring(0,6)+"20", 1));
-        taken.add(new Taak("medicatie nemen", this.klok, klok.getDatum(), klok.getTijd().substring(0,6)+"30", 1));
-        taken.add(new Taak("medicatie nemen", this.klok, klok.getDatum(), klok.getTijd().substring(0,6)+"40", 1));
-        taken.add(new Taak("medicatie nemen", this.klok, klok.getDatum(), klok.getTijd().substring(0,6)+"50", 1));
-        taken.add(new Taak("medicatie nemen", this.klok, klok.getDatum(), klok.getTijd().substring(0,6)+"60", 1));
+        taken.add(new EnkeleTaak("medicatie nemen", this.klok, klok.getDatum(), klok.getTijd().substring(0,6)+"10", 1));
+        taken.add(new EnkeleTaak("medicatie nemen", this.klok, klok.getDatum(), klok.getTijd().substring(0,6)+"20", 1));
+        taken.add(new EnkeleTaak("medicatie nemen", this.klok, klok.getDatum(), klok.getTijd().substring(0,6)+"30", 1));
+        taken.add(new EnkeleTaak("medicatie nemen", this.klok, klok.getDatum(), klok.getTijd().substring(0,6)+"40", 1));
+        taken.add(new EnkeleTaak("medicatie nemen", this.klok, klok.getDatum(), klok.getTijd().substring(0,6)+"50", 1));
+        taken.add(new EnkeleTaak("medicatie nemen", this.klok, klok.getDatum(), klok.getTijd().substring(0,6)+"60", 1));
+
+        taken.add(new ConstanteTaak("neem een slokje water elke 5 seconden.", this.klok, 5, 2));
     }
 
 

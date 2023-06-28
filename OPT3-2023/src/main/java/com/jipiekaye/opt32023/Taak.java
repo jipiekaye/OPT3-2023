@@ -1,22 +1,20 @@
 package com.jipiekaye.opt32023;
 
-import java.util.Date;
+import com.jipiekaye.opt32023.observerPattern.Observer;
 
-public class Taak {
-    private String Titel;
-    private Melding melding;
+public abstract class Taak implements Observer {
+    private String titel;
+    protected Melding melding;
     private int prioriteit;
 
-    public Taak(String titel, Klok klok, String deadlineDatum, String deadlineTijd, int prioriteit) {
-        Titel = titel;
-        this.melding = new Melding(titel, klok, deadlineDatum, deadlineTijd);
-        this.prioriteit = prioriteit;
-    }
+    protected Klok klok;
 
-    public Taak(String titel, Klok klok, String deadlineDatum, int prioriteit) {
-        Titel = titel;
-        this.melding = new Melding(titel, klok, deadlineDatum, "12:00:00");
+    public Taak(String titel, Klok klok, int prioriteit) {
+        this.titel = titel;
         this.prioriteit = prioriteit;
+        this.klok = klok;
+        klok.attachObserver(this);
+        melding = new Melding(titel);
     }
 
     public static int experienceCalculator(int prioriteit, boolean teLaat, int dagenTeVroeg, boolean laatsteTaak) {
