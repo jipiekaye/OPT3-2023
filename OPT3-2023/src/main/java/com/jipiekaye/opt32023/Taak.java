@@ -27,4 +27,9 @@ public abstract class Taak implements Observer {
             result += 50;
         return (int) result;
     }
+
+    @Override
+    public void update() {
+        System.out.println("Melding is gegeven");
+    }
 }

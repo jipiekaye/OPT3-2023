@@ -26,7 +26,7 @@ public class Klok extends Observable implements Runnable {
             dag = dayFormat.format(Calendar.getInstance().getTime());
 
             datum = dateFormat.format(Calendar.getInstance().getTime());
-            System.out.println(toString());
+
             //om de observers te laten weten dat de tijd is veranderd
             notifyObservers();
 
