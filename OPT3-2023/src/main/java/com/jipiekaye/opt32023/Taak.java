@@ -9,6 +9,8 @@ public abstract class Taak implements Observer {
 
     protected Klok klok;
 
+    private int aantalMeldingenGegeven = 0;
+
     public Taak(String titel, Klok klok, int prioriteit) {
         this.titel = titel;
         this.prioriteit = prioriteit;
@@ -30,6 +32,9 @@ public abstract class Taak implements Observer {
 
     @Override
     public void update() {
-        System.out.println("Melding is gegeven");
+        aantalMeldingenGegeven++;
+        checkVoorMelding();
     }
+
+    public void checkVoorMelding(){};
 }

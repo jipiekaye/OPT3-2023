@@ -84,5 +84,9 @@ public class Gebruiker {
         else return "groen";
     }
 
+    public String takenVanVandaag() {
+        for (Taak t: taken) {
 
+        }
+    }
 }
