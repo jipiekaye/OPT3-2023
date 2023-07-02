@@ -1,4 +1,4 @@
-package com.jipiekaye.opt32023;
+package com.jipiekaye.opt32023.Meldingen;
 
 import com.jipiekaye.opt32023.observerPattern.Observer;
 

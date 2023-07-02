@@ -1,5 +1,6 @@
 package com.jipiekaye.opt32023;
 
+import com.jipiekaye.opt32023.Meldingen.Melding;
 import com.jipiekaye.opt32023.observerPattern.Observer;
 
 public abstract class Taak implements Observer {
@@ -8,7 +9,6 @@ public abstract class Taak implements Observer {
     private int prioriteit;
 
     protected Klok klok;
-
     private int aantalMeldingenGegeven = 0;
 
     public Taak(String titel, Klok klok, int prioriteit) {
@@ -36,5 +36,7 @@ public abstract class Taak implements Observer {
         checkVoorMelding();
     }
 
-    public void checkVoorMelding(){};
+    public void checkVoorMelding(){}
+
+    public boolean isVandaag(){return true;}
 }

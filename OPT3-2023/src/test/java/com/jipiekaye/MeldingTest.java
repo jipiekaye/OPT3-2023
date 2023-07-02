@@ -1,7 +1,6 @@
 package com.jipiekaye;
 
-import com.jipiekaye.opt32023.Klok;
-import com.jipiekaye.opt32023.Melding;
+import com.jipiekaye.opt32023.Meldingen.Melding;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
