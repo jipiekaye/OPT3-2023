@@ -7,9 +7,9 @@ import com.jipiekaye.opt32023.Meldingen.WindowsMelding;
 import com.jipiekaye.opt32023.observerPattern.Observer;
 
 public abstract class Taak implements Observer {
-    private String titel;
+    protected String titel;
     protected Melding melding;
-    private int prioriteit;
+    protected int prioriteit;
 
     protected Klok klok;
     private int aantalMeldingenGegeven = 0;

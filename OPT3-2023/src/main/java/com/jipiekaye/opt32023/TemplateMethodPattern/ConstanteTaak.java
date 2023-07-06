@@ -21,4 +21,12 @@ public class ConstanteTaak extends Taak {
         }
         else timer --;
     }
+
+    @Override
+    public String toString() {
+        return super.titel + "\n wordt elke: " +
+                intervalTussenMelding/60 + " minuten en " +
+                intervalTussenMelding%60 + " seconden gemeld." +
+                "\n nog " + timer/60 + " minuten tot volgende melding.";
+    }
 }

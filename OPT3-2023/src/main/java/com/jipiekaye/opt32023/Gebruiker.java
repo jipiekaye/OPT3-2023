@@ -117,7 +117,7 @@ public class Gebruiker {
         else System.out.println("Er zijn geen taken om te verwijderen.");
     }
 
-    void voegTaakToe() {
+    public void voegTaakToe() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Welk type taak wilt u toevoegen?");
@@ -133,7 +133,7 @@ public class Gebruiker {
         }
     }
 
-    public Taak maakEnkeleTaak() {
+    private Taak maakEnkeleTaak() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Naam van de taak: ");
         String titel = scanner.next();
@@ -144,5 +144,11 @@ public class Gebruiker {
         System.out.print("Prioriteitsniveau van Taak");
         int prioriteit = scanner.nextInt();
         return new EnkeleTaak(titel, klok, datum, tijd, prioriteit);
+    }
+
+    public void toonTaken() {
+        for (Taak taak: taken) {
+            System.out.println(taak.toString());
+        }
     }
 }

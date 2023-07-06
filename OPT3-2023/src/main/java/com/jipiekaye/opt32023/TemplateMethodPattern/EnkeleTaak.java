@@ -22,4 +22,9 @@ public class EnkeleTaak extends Taak {
     public boolean isVandaag(){
         return deadlineDatum.equals(klok.getDatum());
     }
+
+    @Override
+    public String toString() {
+        return super.titel + "\n deadline: " + deadlineDatum + " " + deadlineTijd;
+    }
 }

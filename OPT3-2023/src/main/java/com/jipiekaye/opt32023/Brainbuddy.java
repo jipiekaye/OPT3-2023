@@ -63,7 +63,7 @@ public class Brainbuddy extends Application {
             }
 
             if (optie == 1) {
-                toonTaken();
+                huidigeGebruiker.toonTaken();
             }
 
             if (optie == 2) {
@@ -85,7 +85,4 @@ public class Brainbuddy extends Application {
 
     }
 
-    private void toonTaken() {
-
-    }
 }
