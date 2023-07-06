@@ -3,7 +3,6 @@ module com.example.opt {
     requires javafx.fxml;
 
     requires org.kordamp.bootstrapfx.core;
-    requires java.datatransfer;
     requires java.desktop;
 
     opens com.jipiekaye.opt32023 to javafx.fxml;

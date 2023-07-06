@@ -4,6 +4,7 @@ import com.jipiekaye.opt32023.TemplateMethodPattern.ConstanteTaak;
 import com.jipiekaye.opt32023.TemplateMethodPattern.EnkeleTaak;
 import com.jipiekaye.opt32023.TemplateMethodPattern.Taak;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -119,11 +120,9 @@ public class Gebruiker {
 
     public void voegTaakToe() {
         Scanner scanner = new Scanner(System.in);
-
         System.out.println("Welk type taak wilt u toevoegen?");
         System.out.println("1) Enkele Taak");
         System.out.println("2) Constante taak");
-
         int optie;
         for (optie = scanner.nextInt(); optie > 2 || optie < 1; optie = scanner.nextInt()) {
             System.out.println("Vul a.u.b. een keuze 1 t/m 2 in.");
@@ -147,8 +146,23 @@ public class Gebruiker {
     }
 
     public void toonTaken() {
+        int i = 0;
         for (Taak taak: taken) {
-            System.out.println(taak.toString());
+            System.out.println(i + ") " + taak.toString());
+            i++;
         }
+    }
+
+    void pasTaakAan() {
+//        Scanner scanner = new Scanner(System.in);
+//        toonTaken();
+//        System.out.println("Welke taak wilt u aanpassen: ");
+//        int in;
+//        for (in = scanner.nextInt(); in > taken.size() || in < 0; in = scanner.nextInt()) {
+//            System.out.println("Vul a.u.b. een keuze 0 t/m "+ taken.size()+ " in.");
+//        }
+//        Taak taak = taken.get(in);
+//        if (taak instanceof EnkeleTaak)
+//            enkeleTaak
     }
 }

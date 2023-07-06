@@ -71,18 +71,12 @@ public class Brainbuddy extends Application {
             }
 
             if (optie == 3) {
-                pasTaakAan();
+                huidigeGebruiker.pasTaakAan();
             }
 
             if (optie == 4) {
                 huidigeGebruiker.verwijderTaak();
             }
         }
-
     }
-
-    private void pasTaakAan() {
-
-    }
-
 }
