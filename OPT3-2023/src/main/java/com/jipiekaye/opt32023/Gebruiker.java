@@ -2,6 +2,7 @@ package com.jipiekaye.opt32023;
 
 import com.jipiekaye.opt32023.TemplateMethodPattern.ConstanteTaak;
 import com.jipiekaye.opt32023.TemplateMethodPattern.EnkeleTaak;
+import com.jipiekaye.opt32023.TemplateMethodPattern.Taak;
 
 import java.util.ArrayList;
 public class Gebruiker {

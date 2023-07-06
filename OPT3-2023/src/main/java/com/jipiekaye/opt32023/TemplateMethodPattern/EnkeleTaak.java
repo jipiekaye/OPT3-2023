@@ -1,7 +1,6 @@
 package com.jipiekaye.opt32023.TemplateMethodPattern;
 
 import com.jipiekaye.opt32023.Klok;
-import com.jipiekaye.opt32023.Taak;
 
 public class EnkeleTaak extends Taak {
 
