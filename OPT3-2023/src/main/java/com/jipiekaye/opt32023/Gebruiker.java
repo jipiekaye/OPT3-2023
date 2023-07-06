@@ -5,6 +5,8 @@ import com.jipiekaye.opt32023.TemplateMethodPattern.EnkeleTaak;
 import com.jipiekaye.opt32023.TemplateMethodPattern.Taak;
 
 import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Gebruiker {
 
     private String naam;
@@ -44,6 +46,9 @@ public class Gebruiker {
         System.out.println(takenVanVandaag());
     }
 
+    public ArrayList<Taak> getTaken() {
+        return taken;
+    }
 
     public String getNaam() {
         return naam;
@@ -94,5 +99,50 @@ public class Gebruiker {
             }
         }
         return result;
+    }
+
+    public void verwijderTaak() {
+        Scanner scanner = new Scanner(System.in);
+
+        if (getTaken().isEmpty()) {
+            System.out.println("Welke taak wilt u verwijderen?");
+            int i = 1;
+            for (Taak inhoud : getTaken()) {
+                System.out.println(i + ") " + inhoud);
+                i++;
+            }
+            System.out.print("1-" + i + ": ");
+            getTaken().remove(scanner.nextInt() - 1);
+        }
+        else System.out.println("Er zijn geen taken om te verwijderen.");
+    }
+
+    void voegTaakToe() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welk type taak wilt u toevoegen?");
+        System.out.println("1) Enkele Taak");
+        System.out.println("2) Constante taak");
+
+        int optie;
+        for (optie = scanner.nextInt(); optie > 2 || optie < 1; optie = scanner.nextInt()) {
+            System.out.println("Vul a.u.b. een keuze 1 t/m 2 in.");
+        }
+        if (optie == 1) {
+            taken.add(maakEnkeleTaak());
+        }
+    }
+
+    public Taak maakEnkeleTaak() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Naam van de taak: ");
+        String titel = scanner.next();
+        System.out.print("Datum van deadline (" + klok.getDatum() + "): ");
+        String datum = scanner.next();
+        System.out.print("Tijd van de deadline (" + klok.getTijd() + "): ");
+        String tijd = scanner.next();
+        System.out.print("Prioriteitsniveau van Taak");
+        int prioriteit = scanner.nextInt();
+        return new EnkeleTaak(titel, klok, datum, tijd, prioriteit);
     }
 }
