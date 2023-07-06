@@ -13,10 +13,14 @@ public class EnkeleTaak extends Taak {
         this.deadlineTijd  = deadlineTijd;
     }
 
-    @Override
-    public void update() {
+
+    public void checkVoorMelding() {
         if (klok.getDatum().equals(deadlineDatum))
             if (klok.getTijd().equals(deadlineTijd))
                 melding.doMelding();
+    }
+
+    public boolean isVandaag(){
+        return deadlineDatum.equals(klok.getDatum());
     }
 }

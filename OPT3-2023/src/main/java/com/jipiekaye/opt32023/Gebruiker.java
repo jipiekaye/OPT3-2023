@@ -40,6 +40,7 @@ public class Gebruiker {
         taken.add(new EnkeleTaak("medicatie nemen", this.klok, klok.getDatum(), klok.getTijd().substring(0,6)+"60", 1));
 
         taken.add(new ConstanteTaak("neem een slokje water elke 5 seconden.", this.klok, 5, 2));
+        System.out.println(takenVanVandaag());
     }
 
 
@@ -84,5 +85,13 @@ public class Gebruiker {
         else return "groen";
     }
 
-
+    public String takenVanVandaag() {
+        String result = null;
+        for (Taak t: taken) {
+            if (t.isVandaag()) {
+                result += t.toString();
+            }
+        }
+        return result;
+    }
 }

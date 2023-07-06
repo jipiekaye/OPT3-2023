@@ -14,9 +14,9 @@ public class ConstanteTaak extends Taak {
         this.intervalTussenMelding = aantalSecondenTotMelding;
     }
 
-    @Override
-    public void update() {
-        if (timer < 1) {
+
+    public void checkVoorMelding() {
+        if (timer <= 0) {
             melding.doMelding();
             timer = intervalTussenMelding;
         }
