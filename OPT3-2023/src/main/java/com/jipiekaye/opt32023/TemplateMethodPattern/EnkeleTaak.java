@@ -1,7 +1,6 @@
 package com.jipiekaye.opt32023.TemplateMethodPattern;
 
 import com.jipiekaye.opt32023.Klok;
-import com.jipiekaye.opt32023.Taak;
 
 public class EnkeleTaak extends Taak {
 
@@ -22,5 +21,10 @@ public class EnkeleTaak extends Taak {
 
     public boolean isVandaag(){
         return deadlineDatum.equals(klok.getDatum());
+    }
+
+    @Override
+    public String toString() {
+        return super.titel + "\n deadline: " + deadlineDatum + " " + deadlineTijd;
     }
 }

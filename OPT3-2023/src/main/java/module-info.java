@@ -3,7 +3,6 @@ module com.example.opt {
     requires javafx.fxml;
 
     requires org.kordamp.bootstrapfx.core;
-    requires java.datatransfer;
     requires java.desktop;
 
     opens com.jipiekaye.opt32023 to javafx.fxml;
@@ -12,4 +11,6 @@ module com.example.opt {
     opens com.jipiekaye.opt32023.observerPattern to javafx.fxml;
     exports com.jipiekaye.opt32023.Meldingen;
     opens com.jipiekaye.opt32023.Meldingen to javafx.fxml;
+    exports com.jipiekaye.opt32023.TemplateMethodPattern;
+    opens com.jipiekaye.opt32023.TemplateMethodPattern to javafx.fxml;
 }

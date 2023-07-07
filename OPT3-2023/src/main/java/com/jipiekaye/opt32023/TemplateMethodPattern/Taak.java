@@ -1,14 +1,15 @@
-package com.jipiekaye.opt32023;
+package com.jipiekaye.opt32023.TemplateMethodPattern;
 
+import com.jipiekaye.opt32023.Klok;
 import com.jipiekaye.opt32023.Meldingen.ConsoleMelding;
 import com.jipiekaye.opt32023.Meldingen.Melding;
 import com.jipiekaye.opt32023.Meldingen.WindowsMelding;
 import com.jipiekaye.opt32023.observerPattern.Observer;
 
 public abstract class Taak implements Observer {
-    private String titel;
+    protected String titel;
     protected Melding melding;
-    private int prioriteit;
+    protected int prioriteit;
 
     protected Klok klok;
     private int aantalMeldingenGegeven = 0;

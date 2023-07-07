@@ -1,6 +1,6 @@
 package com.jipiekaye;
 
-import com.jipiekaye.opt32023.Taak;
+import com.jipiekaye.opt32023.TemplateMethodPattern.Taak;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

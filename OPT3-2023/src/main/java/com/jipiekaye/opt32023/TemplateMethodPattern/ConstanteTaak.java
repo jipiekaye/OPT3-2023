@@ -1,7 +1,6 @@
 package com.jipiekaye.opt32023.TemplateMethodPattern;
 
 import com.jipiekaye.opt32023.Klok;
-import com.jipiekaye.opt32023.Taak;
 
 public class ConstanteTaak extends Taak {
 
@@ -21,5 +20,13 @@ public class ConstanteTaak extends Taak {
             timer = intervalTussenMelding;
         }
         else timer --;
+    }
+
+    @Override
+    public String toString() {
+        return super.titel + "\n wordt elke: " +
+                intervalTussenMelding/60 + " minuten en " +
+                intervalTussenMelding%60 + " seconden gemeld." +
+                "\n nog " + timer/60 + " minuten tot volgende melding.";
     }
 }
