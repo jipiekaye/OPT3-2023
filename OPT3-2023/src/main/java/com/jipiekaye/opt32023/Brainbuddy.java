@@ -45,26 +45,37 @@ public class Brainbuddy extends Application {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             printMenu();
-            int optie;
-            for (optie = scanner.nextInt(); optie > 5 || optie < 1; optie = scanner.nextInt()) {
-                System.out.println("Vul a.u.b. een keuze 1 t/m 5 in.");
-            }
-            if (optie == 5) {
-                break;
-            }
-            if (optie == 1) {
-                huidigeGebruiker.toonTaken();
-            }
-            if (optie == 2) {
-                huidigeGebruiker.voegTaakToe();
-            }
-            if (optie == 3) {
-                huidigeGebruiker.pasTaakAan();
-            }
-            if (optie == 4) {
-                huidigeGebruiker.verwijderTaak();
-            }
+            int optie = getOptie(scanner);
+
+            if (doMenuTask(optie)) break;
         }
+    }
+
+    private boolean doMenuTask(int optie) {
+        if (optie == 5) {
+            return true;
+        }
+        if (optie == 1) {
+            huidigeGebruiker.toonTaken();
+        }
+        if (optie == 2) {
+            huidigeGebruiker.voegTaakToe();
+        }
+        if (optie == 3) {
+            huidigeGebruiker.pasTaakAan();
+        }
+        if (optie == 4) {
+            huidigeGebruiker.verwijderTaak();
+        }
+        return false;
+    }
+
+    private int getOptie(Scanner scanner) {
+        int optie;
+        for (optie = scanner.nextInt(); optie > 5 || optie < 1; optie = scanner.nextInt()) {
+            System.out.println("Vul a.u.b. een keuze 1 t/m 5 in.");
+        }
+        return optie;
     }
 
     private void printMenu() {
