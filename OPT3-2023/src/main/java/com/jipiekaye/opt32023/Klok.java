@@ -42,10 +42,6 @@ public class Klok extends Observable implements Runnable {
         return tijd;
     }
 
-    public String getDag() {
-        return dag;
-    }
-
     public String getDatum() {
         return datum;
     }

@@ -8,28 +8,18 @@ import com.jipiekaye.opt32023.observerPattern.Observer;
 
 public abstract class Taak implements Observer {
     protected String titel;
-    protected Melding melding;
     protected int prioriteit;
 
     protected Klok klok;
     private int aantalMeldingenGegeven = 0;
+
+    private boolean meldingSchermAan = false;
 
     public Taak(String titel, Klok klok, int prioriteit) {
         this.titel = titel;
         this.prioriteit = prioriteit;
         this.klok = klok;
         klok.attachObserver(this);
-        melding = new ConsoleMelding(titel);
-    }
-
-    public Taak(String titel, Klok klok, int prioriteit, boolean windowsMeldingAan) {
-        this.titel = titel;
-        this.prioriteit = prioriteit;
-        this.klok = klok;
-        klok.attachObserver(this);
-        if (windowsMeldingAan)
-            melding = new WindowsMelding(titel);
-        else melding = new ConsoleMelding(titel);
     }
 
     public static int experienceCalculator(int prioriteit, boolean teLaat, int dagenTeVroeg, boolean laatsteTaak) {
@@ -49,7 +39,28 @@ public abstract class Taak implements Observer {
         checkVoorMelding();
     }
 
-    public void checkVoorMelding(){}
+    public void checkVoorMelding() {
+    }
 
-    public boolean isVandaag(){return true;}
+    public boolean isVandaag() {
+        return true;
+    }
+
+    public void setMeldingSchermAan(boolean meldingSchermAan) {
+        this.meldingSchermAan = meldingSchermAan;
+    }
+
+    public boolean isMeldingSchermAan() {
+        return meldingSchermAan;
+    }
+
+    protected void doMelding() {
+        if (isMeldingSchermAan()) {
+            ConsoleMelding melding = new ConsoleMelding(titel);
+            melding.doMelding();
+        } else {
+            WindowsMelding melding = new WindowsMelding(titel);
+            melding.doMelding();
+        }
+    }
 }

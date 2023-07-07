@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class GebruikerTest {
     @Test
     public void standVanTakenTest() {
-        Gebruiker gebruiker = new Gebruiker("test", "test", false);
+        Gebruiker gebruiker = new Gebruiker("test", "test");
         assertEquals(gebruiker.standVanTaken(100,0), "rood");
         assertEquals(gebruiker.standVanTaken(71,29), "rood");
         assertEquals(gebruiker.standVanTaken(70,30), "geel");

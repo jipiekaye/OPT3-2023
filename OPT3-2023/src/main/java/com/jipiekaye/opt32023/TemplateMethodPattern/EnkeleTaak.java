@@ -16,7 +16,7 @@ public class EnkeleTaak extends Taak {
     public void checkVoorMelding() {
         if (klok.getDatum().equals(deadlineDatum))
             if (klok.getTijd().equals(deadlineTijd))
-                melding.doMelding();
+                doMelding();
     }
 
     public boolean isVandaag(){

@@ -1,6 +1,8 @@
 package com.jipiekaye.opt32023.TemplateMethodPattern;
 
 import com.jipiekaye.opt32023.Klok;
+import com.jipiekaye.opt32023.Meldingen.ConsoleMelding;
+import com.jipiekaye.opt32023.Meldingen.WindowsMelding;
 
 public class ConstanteTaak extends Taak {
 
@@ -16,7 +18,7 @@ public class ConstanteTaak extends Taak {
 
     public void checkVoorMelding() {
         if (timer <= 0) {
-            melding.doMelding();
+            doMelding();
             timer = intervalTussenMelding;
         }
         else timer --;
@@ -29,4 +31,5 @@ public class ConstanteTaak extends Taak {
                 intervalTussenMelding%60 + " seconden gemeld." +
                 "\n nog " + timer/60 + " minuten tot volgende melding.";
     }
+
 }
