@@ -44,39 +44,38 @@ public class Brainbuddy extends Application {
     public void doMenu() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.print(
-                    "Welkom bij BrainBuddy, Hier uw keuzemenu:\n" +
-                            "1) Toon taken\n" +
-                            "2) Voeg taak toe\n" +
-                            "3) Pas Taak aan\n" +
-                            "4) Verwijder Taak\n" +
-                            "5) Verlaat programma\n" +
-                            "\n" +
-                            "   Uw Keuze :");
+            printMenu();
             int optie;
             for (optie = scanner.nextInt(); optie > 5 || optie < 1; optie = scanner.nextInt()) {
                 System.out.println("Vul a.u.b. een keuze 1 t/m 5 in.");
             }
-
             if (optie == 5) {
                 break;
             }
-
             if (optie == 1) {
                 huidigeGebruiker.toonTaken();
             }
-
             if (optie == 2) {
                 huidigeGebruiker.voegTaakToe();
             }
-
             if (optie == 3) {
                 huidigeGebruiker.pasTaakAan();
             }
-
             if (optie == 4) {
                 huidigeGebruiker.verwijderTaak();
             }
         }
+    }
+
+    private void printMenu() {
+        System.out.print(
+                "Welkom bij BrainBuddy, Hier uw keuzemenu:\n" +
+                        "1) Toon taken\n" +
+                        "2) Voeg taak toe\n" +
+                        "3) Pas Taak aan\n" +
+                        "4) Verwijder Taak\n" +
+                        "5) Verlaat programma\n" +
+                        "\n" +
+                        "   Uw Keuze :");
     }
 }
